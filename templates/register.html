@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Survey Application</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="index.html">Home</a></li>
+                    <li role="presentation" class="active"><a href="register">Register</a></li>
+                    <li role="presentation"><a href="vote">Vote</a></li>
+                </ul>
+            </nav>
+            <h1 class="text-muted">Survey Application</h1>
+        </div>
+
+        {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+       {%- endfor %}
+
+    <div class="jumbotron">
+            <h2></h2>
+            <p class="lead">Sign up for new user and complete the survey.</p>
+
+        <form action="/register" method="post" >
+                <label><b>*Employee ID: </b></label><br>
+                <input type="text" placeholder="Enter employee id" name="emp_id">
+                <br><br>
+                <label><b>*Name: </b></label><br>
+                <input type="text" placeholder="Enter your name" name="name">
+                <br><br>
+
+                <label><b>*Email: </b></label><br>
+                <input type="text" placeholder="Enter Email Id" name="email">
+                </br><br>
+                <label><b>*Password: </b></label><br>
+                <input type="password" placeholder="Enter Password" name="password">
+                </br><br>
+                <label><b>*Confirm Password: </b></label><br>
+                <input type="password" placeholder="Confirm Password" name="password_confirm">
+                </br>
+            </br>
+
+            <input type = "submit" class="btn btn-success" value = "Sign up" />
+            <a class="btn btn-success" href="index" role="button">Cancel</a>
+        </form>
+        <footer class="footer">
+            <p> Served by {{hostname}}</p>
+            <p> &copy; Cotiviti 2019</p>
+        </footer>
+    </div>
+
+
+</body>
+</html>
