@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Survey Application</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="index.html">Home</a></li>
+                    <li role="presentation"><a href="register">Register</a></li>
+                    <li role="presentation"><a href="vote">Vote</a></li>
+                </ul>
+            </nav>
+            <h1 class="text-muted">Survey Application</h1>
+        </div>
+
+        {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+       {%- endfor %}
+
+
+        <div class="jumbotron">
+            <form action="/login" method="post" >
+                <label><b>*Employee ID: </b></label><br>
+                <input type="text" placeholder="Enter employee id" name="emp_id">
+                <br><br>
+                <label><b>*Password: </b></label><br>
+                <input type="password" placeholder="Enter your password" name="password">
+                <br><br>
+
+            <input type = "submit" class="btn btn-success" value = "Login" />
+            <a class="btn btn-success" href="index" role="button">Cancel</a>
+        </form>
+
+        </div>
+        <footer class="footer">
+            <p> Served by {{hostname}}</p>
+            <p> &copy; Cotiviti 2019</p>
+        </footer>
+    </div>
+</body>
+</html>
