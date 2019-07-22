@@ -1,8 +1,3 @@
-import os
-import random
-import json
-import socket
-from datetime import datetime
 from flask import Flask, request, flash, url_for, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
 
