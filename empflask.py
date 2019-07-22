@@ -1,4 +1,4 @@
-from FlaskWeb import app
+from empflask import app
 
 if __name__ = '__main__:
     app.run()
